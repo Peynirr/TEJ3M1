@@ -1,0 +1,21 @@
+<html>
+<head>
+<style>
+body, h2 {
+    font-family: Arial
+}
+</style>
+<title>Reflection</title>
+</head>
+
+<body>
+    <h2>Reflection</h2>
+    <h4>Omercan Ozkan</h4>
+
+    <p>Developing the Mad Libs game was a fun experience, creating a game shows a perspective that not a lot of people get to see. Developing the game was tedious, but was fairly simple. All I had to do was initialize variables, such as nouns, verbs, and numbers, so that it would fill in the blanks, in the Mad Lib.</p>
+
+    <p>Although the program seemed easy to complete, it came with some challenges. I experienced a problem where the program would spit out multiple different errors, mainly because I wasn't careful when it came to adding the semicolons, or the brackets. But, the one error I couldn't wrap my head around was the “Segmentation Fault (core dumped)” error. It’s a common error that means that the program is trying to access a memory location that it cannot access. This occurred when I would call up the program in the Linux Terminal. I troubleshooted by removing lines of code, line by line. I eventually found the root of the cause, which was the 'name' variable. It contained the ‘fgets,’ which normally creates errors like this for some reason. To fix this, I simply just removed it from the program all together. I tried to use the ‘scanf’ parameter instead, with two variables (nameA and nameB), but it would result in the same error. Other than that, everything was flush and ran smoothly. Another problem I had was creating the Mad Lib. I’m not the most creative person when it comes to writing something like this or any sort of literature, but I managed to write a solid paragraph with enough fill-in-the-blanks to call it quits.</p>
+
+    <p>The user experience could have been better and more friendly. When observing my partner testing my code, I noticed that the entered words did not really make sense with the Mad Lib. I would either change the Mad Lib so that anything would make sense, or instruct the user to enter a word that would sound right, just to make it a better experience.</p>
+</body>
+</html>
