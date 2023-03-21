@@ -20,10 +20,12 @@ int main()
       {
         has_upper = 1;
       }
+
       else if (islower(password[i]))
       {
         has_lower = 1;
       }
+
     else if (isdigit(password[i]))
       {
         has_digit = 1;
@@ -34,6 +36,7 @@ int main()
     {
       printf("Your password is valid.\n");
     }
+
     else
     {
       printf("Your password is invalid. Please make sure it contains at least one uppercase letter, one lowercase letter, and one digit.\n");
@@ -43,6 +46,7 @@ int main()
   {
     printf("Your password is too short. Please make sure it contains at least 8 characters.\n");
   }
+
   return 0;
 }
 
