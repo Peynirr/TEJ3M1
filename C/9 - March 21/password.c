@@ -9,7 +9,7 @@ int main()
   
   printf("Enter your password:  ");
   scanf("%s", &password);
-  
+
   length = strlen(password);
   
   if (length >= 8)
