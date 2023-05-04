@@ -11,47 +11,49 @@ int main() {
   cbreak();
   timeout(1);
   noecho();
-  curs_set(0);
+  curs_set(1);
   
   int uservariable;
   int ontime = 0;
-  int offtime = 0;
-  int cycle = 0;
+  int offtime = 10000;
+  float dutycycle = 0;
   int running = 0;
 
   while(running == 0) {
     clear();
-    mvprintw(1, 3, "Press 'i' to increase and 'k' to decrease");
-    mvprintw(2, 3, "Duty cycle: %.2f%% percent", cycle);
+    mvprintw(1, 12, "Press 'i' to increase and 'k' to decrease");
+    mvprintw(2, 12, "Press 'q' to quit the program.);
+    mvprintw(3, 12, "Duty cycle: %.2f%%", dutycycle);
     refresh();
     
     uservariable = getch();
     
     outb(0xFF, BASEPORT);
     usleep(ontime);
-      
-    outb(0x0, BASEPORT):
+    
+    outb(0x0, BASEPORT);
     usleep(offtime);
     
     if (uservariable == 'q') {
-      running = 1;
+      running == 1
+      break;
     }
     if (uservariable == 'i')
-      cycle = cycle + 1;
-      if (cycle >= 99) {
-        cycle = 99;
+      ontime = ontime+100;
+      if (ontime >= 10000) {
+        ontime = 10000;
       }
     }
     if (uservariable == 'k') {
-      cycle = cycle - 1;
-      if (cycle <= 1) {
-        cycle = 1;
+      ontime = ontime-100;
+      if (ontime <= 0) {
+        ontime = 0;
       }
-    } 
-    ontime = cycle*100
-    offtime = 100*(100-cycle);
+    }
+    dutycycle = (float)(ontime*100)/10000;
+    offtime = 10000-ontime; 
   }
-  endwin();
   ioperm(BASEPORT, 3, 0);
+  endwin();
   return 0;
 }
