@@ -4,11 +4,23 @@
 #include <stdio.h>
 
 int main() {
-  int myNumbers[]= {7, 17, 2006, 2, 90};
+    unsigned char digits[10] = {
+    0b0000, //0
+    0b0001, //1
+    0b0010, //2
+    0b0011, //3
+    0b0100, //4
+    0b0101, //5
+    0b0110, //6
+    0b0111, //7
+    0b1000, //8
+    0b1001 //0
+  };
   
-  printf("Favorite Number: %d \n", myNumbers[0]);
-  printf("Age: %d \n", myNumbers[1]);
-  printf("Year birth: %d \n", myNumbers[2]);
-  printf("Month born: %d \n", myNumbers[3]);
-  printf("Cool age: %d \n", myNumbers[4]);
+    unsigned int test[2] = 0010;
+    
+  printf("%d", test[2]);
 }
+
+  
+  
