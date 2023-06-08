@@ -4,10 +4,6 @@
 
 #define BASEPORT 0x378
 
-void writeData(unsigned char data) {
-  outb(data, BASEPORT);
-}
-
 unsigned char digits[10] = {
   0b0000, //0
   0b0001, //1
@@ -18,7 +14,7 @@ unsigned char digits[10] = {
   0b0110, //6
   0b0111, //7
   0b1000, //8
-  0b1001 //0
+  0b1001  //9
 };
 
 int main() {
@@ -62,10 +58,10 @@ int main() {
     //checks for user input
     uservariable = getch();
     
-    writeData(onesBinaryString);
+    outb(onesBinaryString, BASEPORT);
     usleep(1000);
     
-    writeData(tensBinaryString);
+    outb(tensBinaryString, BASEPORT);
     usleep(1000);
     
     //Quits if 'q' is pressed
